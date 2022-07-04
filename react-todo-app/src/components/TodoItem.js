@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import styles from "./TodoItem.module.css"
 
@@ -35,6 +35,11 @@ if (state.editing) {
 } else {
   editMode.display = "none"
 }
+useEffect(() => {
+  return () => {
+    console.log("Cleaning up...")
+  }
+}, [])
 
   return (
   <li  className={styles.item}>
